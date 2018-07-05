@@ -1,0 +1,48 @@
+{
+  "profiles":[
+    {
+      "id":1,
+      "name":"Karthik",
+      "label":"DBA",
+      "company":"Infosys",
+      "education":[{
+        "degree":"B.tech(Computer sciecne and engineering)",
+        "institute":"PSCMR",
+        "data":["82%","2015-2019"]
+        }]
+    },
+    {
+      "id":2,
+      "name":"Ram",
+      "label":"Tester",
+      "company":"Virtusa",
+      "education":[{
+        "degree":"B.tech(Computer sciecne and engineering)",
+        "institute":"MVR",
+        "data":["85%","2015-2019"]
+        }]
+    },
+    {
+      "id":3,
+      "name":"Raj",
+      "label":"Developer",
+      "company":"Capgemini",
+       "education":[{
+              "degree":"B.tech(Computer sciecne and engineering)",
+              "institute":"SRK",
+              "data":["77%","2015-2019"]
+              }]
+    },
+    {
+      "id":4,
+      "name":"Madhu",
+      "label":"Team Leader",
+      "company":"IBM",
+      "education":[{
+        "degree":"B.tech(Computer sciecne and engineering)",
+        "institute":"STM",
+        "data":["60%","2015-2019"]
+        }]
+    }
+  ]
+}
