@@ -43,18 +43,130 @@
     var data=JSON.parse(text);
     console.log(data);
    profileData(data.profiles);
+   fun_career(data.career);
+  fun_education(data.education);
+  fun_achievements(data.achievements);
+  fun_skills(data.skills);
   })
 
   function profileData(pro){
     for (var i = 0; i < pro.length; i++) {
       if(parameter[1]==pro[i].id){
       var div=document.querySelector(".child1");
-      div.textContent=pro[i].name;
-
-
-      }
+      //div.textContent=pro[i].name;
+      var img=document.createElement("img");
+      img.src=pro[i].image;
+      div.appendChild(img);
+      var h1=document.createElement("h2");
+      h1.textContent=pro[i].name;
+      div.appendChild(h1);
+      var h3=document.createElement("h3");
+      h3.textContent=pro[i].label;
+      div.appendChild(h3);
+      var h4=document.createElement("h3");
+      h4.textContent=pro[i].mail;
+      div.appendChild(h4);
+      var h5=document.createElement("h3");
+      h5.textContent=pro[i].company;
+      div.appendChild(h5);
+      //career objective
+    /*  var div2=document.querySelector(".child2");
+       var h2=document.createElement("h2");
+       h2.textContent="Career Objective:";
+       div2.appendChild(h2);
+       var c1=document.createElement("hr");
+       div2.appendChild(c1);
+       //var c1=document.createElement("ul");
+       //div2.appendChild(c1);
+       var jj=document.createElement("p");
+       jj.textContent=pro[i].career.info;
+       div2.appendChild(jj);
+      //educational details
+      var h1=document.createElement("h1");
+  h1.textContent="Education Qualification:";
+  div2.appendChild(h1);
+  var list1=document.createElement("hr");
+  div2.appendChild(list1);
+  var list=document.createElement("ul");
+  div2.appendChild(list);
+  for (var i=0;i<pro[i].education.length;i++){
+      var listitem=document.createElement("li");
+      listitem.textContent=pro[i].education[i].degree;
+      list.appendChild(listitem);
+      var listitem1=document.createElement("p");
+      listitem1.textContent=education[i].institute;
+      list.appendChild(listitem1);
+      var listitem2=document.createElement("p");
+      listitem2.textContent=education[i].data;
+      list.appendChild(listitem2);
+  }*/
+     }
     }
   }
+
+  var div2=document.querySelector(".child2");
+  function fun_career(car){
+    var h2=document.createElement("h2");
+    h2.textContent="Career Objective:";
+    div2.appendChild(h2);
+    var c1=document.createElement("hr");
+    div2.appendChild(c1);
+    var c1=document.createElement("ul");
+    div2.appendChild(c1);
+    var jj=document.createElement("li");
+    jj.textContent=car.info;
+   div2.appendChild(jj);
+  }
+  function fun_education(edu){
+    var h1=document.createElement("h1");
+    h1.textContent="Education Qualification:";
+    div2.appendChild(h1);
+    var list1=document.createElement("hr");
+    div2.appendChild(list1);
+    var list=document.createElement("ul");
+    div2.appendChild(list);
+    for (var i=0;i<edu.length;i++){
+        var listitem=document.createElement("li");
+        listitem.textContent=edu[i].degree;
+        list.appendChild(listitem);
+        var listitem1=document.createElement("p");
+        listitem1.textContent=edu[i].institute;
+        list.appendChild(listitem1);
+        var listitem2=document.createElement("p");
+        listitem2.textContent=edu[i].data;
+        list.appendChild(listitem2);
+    }
+  }
+  function fun_achievements(ach){
+    var h1=document.createElement("h1");
+    h1.textContent="Achievements:";
+    div2.appendChild(h1);
+    var list1=document.createElement("hr");
+    div2.appendChild(list1);
+    var list=document.createElement("ul");
+    div2.appendChild(list);
+    for (var i=0;i<ach.length;i++){
+        var listitem=document.createElement("li");
+        listitem.innerHTML=ach[i].name;
+        list.appendChild(listitem);
+
+    }
+  }
+  function fun_skills(tech){
+    var heading=document.createElement("h1");
+    heading.textContent="Technical Skills:";
+    div2.appendChild(heading);
+    var hr=document.createElement("hr");
+    heading.appendChild(hr);
+    var tr="";
+    var table=document.createElement("table");
+    div2.appendChild(table);
+    for(var i=0;i<tech.length;i++){
+      tr+="<tr><td>"+tech[i].name+"</td><td>"+tech[i].data+"</td></tr>";
+    }
+    table.innerHTML=tr;
+  }
+
 </script>
   </body>
 </html>
